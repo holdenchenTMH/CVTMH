@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+  margin: 0 auto;
+}
+/* Mặc định body = 1rem html , nếu html font-size = 100% thì body 1 rem = 16px, nếu font-size = 62.5 1 rem = 10px */
+body {
+  font-family: "Noto Sans SC", "Microsoft YaHei", "微软雅黑", sans-serif;
+  background: white;
+  line-height: 1.6;
+  background: #2b2b2b;
+  font-size: 14px;
+  margin: 0 auto;
+}
+.container {
+  /* width: 794px; */
+  /* height: auto; */
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  /* padding: 10px; */
+  background: white;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.15); */
+  /* min-height: 100vh; */
+}
+.left-section {
+  padding: 10px 10px 10px 15px;
+  background: #f8f8f8;
+}
+.photo-placeholder {
+  width: 150px;
+  height: 150px;
+  background-size: 185% auto;
+  background-image: url(../img/avata.jpg);
+  background-position: center calc(50% - 40px);
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+.profile-photo {
+  display: flex;
+  flex-direction: column; /* ảnh + tên + job stacked */
+  align-items: center; /* căn giữa theo ngang */
+  justify-content: center; /* căn giữa theo dọc */
+  padding: 10px 0px;
+}
+.section {
+  padding: 0 0 10px 0;
+}
+.contact-item a {
+  text-decoration: none;
+  color: #2563eb;
+}
+.contact-item a:hover {
+  text-decoration: underline;
+}
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0 0 0;
+  /* font-size: 16px; */
+}
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.school {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.time {
+  font-style: italic;
+  color: #9ca3af;
+  /* padding: 0 2px; */
+  font-size: 0.9rem;
+}
+
+/* right-section */
+.right-section {
+  padding: 10px 15px 10px 10px;
+  /* margin: 0 0 0 10px; */
+}
+li {
+  margin: 0 0 0 20px;
+  text-align: justify;
+  /* text-align: left; */
+}
+.company {
+  padding: 5px 0 0 5px;
+}
+.company-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.company-name p {
+  font-style: italic;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+h4 {
+  font-size: 16px;
+}
+.job-description {
+  padding: 5px 0;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+  padding: 0;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 400;
+  }
+  .section-title::after {
+    transform: scaleY(0.4);
+    opacity: 0.6;
+  }
+}
